@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/chat_screen.dart';
+//import 'screens/chat_screen.dart';
 import 'screens/welcome/welcome_screen.dart';
 import 'constants.dart';
 import 'screens/login/login_screen.dart';

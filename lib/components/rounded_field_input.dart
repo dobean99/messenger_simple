@@ -4,20 +4,26 @@ import '../constants.dart';
 class RoundedFieldInput extends StatelessWidget {
   final String hintText;
   final IconData icon;
-  final ValueChanged<String> onchange;
 
   const RoundedFieldInput({
     Key key,
     this.hintText,
     this.icon=Icons.person,
-    this.onchange,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    String _userValue='';
     return TextFieldContainer(
-      child: TextField(
-        onChanged: onchange,
+      child: TextFormField(
+        validator:(value){
+          if(value.isEmpty)
+            return 'Please enter the username';
+          return null;
+        } ,
+        onSaved:(value){
+          _userValue=value;
+        } ,
         decoration: InputDecoration(
           hintText: hintText,
           border: InputBorder.none,
